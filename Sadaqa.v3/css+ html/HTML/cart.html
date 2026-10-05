@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>السلة - Sadaqa</title>
+  <link rel="stylesheet" href="styles-merged.css" /> <!-- styles1 -->
+</head>
+<body class="cart-page-body">
+
+  <div class="page-wrapper">
+
+    <header class="main-header">
+    <div class="header-right">
+      <a href="homepage.html">
+      <img src="../images/Sadaqa logo.png" alt="Sadaqa Logo" class="nav-logo">
+      </a>
+      <nav class="nav-links">
+        <a href="homepage.html" class="active">الصفحة الرئيسية</a>
+        <a href="my-campaigns.html">حملاتك</a>
+        <a href="contact-us.html">تواصل معنا</a>
+      </nav>
+    </div>
+
+    <div class="header-left">
+      
+      <div class="filter-wrapper">
+        <button class="filter-btn" id="filterToggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+          </svg>
+        </button>
+        
+        <div class="filter-menu" id="filterMenu">
+          <h4>تصفية حسب النوع:</h4>
+          <label><input type="checkbox" checked> توفير الطعام للمساكين</label>
+          <label><input type="checkbox" checked> ساعد مريضًا</label>
+          <label><input type="checkbox" checked> كفالة حجاج</label>
+          <label><input type="checkbox" checked> كفالة يتيم</label>
+          <label><input type="checkbox" checked> بناء آبار</label>
+          <label><input type="checkbox" checked> ترميم مساجد</label>
+          <label><input type="checkbox" checked> سقيا ماء</label>
+        </div>
+      </div>
+
+      <div class="search-container">
+        <input type="text" placeholder="ابحث عن حملة..." class="search-input">
+      </div>
+
+                <div class="cart-wrapper">
+        <a href="cart.html" class="cart-trigger">
+            <img src="../images/cart.png" alt="Cart" class="header-icon cart-icon">
+        </a>
+        </div>
+
+        <a href="profile.html" class="account-link">
+        <img src="../images/AccountIcon.png" alt="Account" class="header-icon account-trigger">
+        </a>
+
+    </div>
+  </header>
+
+    <main class="main-content cart-main-content">
+      <section class="cart-page-section">
+        <div class="cart-header-row">
+          <h1 class="section-title">سلة التبرعات</h1>
+          <span class="cart-items-count">عدد الحملات: 3</span>
+        </div>
+
+        <div class="cart-layout">
+
+          <div class="cart-items-list">
+
+            <div class="cart-item-card">
+              <div class="cart-item-image">
+                <img src="../images/mosque.png" alt="ترميم مساجد">
+              </div>
+
+              <div class="cart-item-details">
+                <span class="cart-item-category">ترميم مساجد</span>
+                <h3 class="cart-item-name">حملة بناء مسجد الغفران</h3>
+                <p class="cart-item-amount">
+                  مبلغ التبرع:
+                  <span>500
+                    <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال">
+                  </span>
+                </p>
+              </div>
+
+              <div class="cart-item-actions">
+                <button class="quantity-btn" type="button">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" type="button">+</button>
+                <button class="remove-btn" type="button">حذف</button>
+              </div>
+            </div>
+
+            <div class="cart-item-card">
+              <div class="cart-item-image">
+                <img src="../images/water.png" alt="سقيا ماء">
+              </div>
+
+              <div class="cart-item-details">
+                <span class="cart-item-category">سقيا ماء</span>
+                <h3 class="cart-item-name">توفير برادات ماء للمدارس</h3>
+                <p class="cart-item-amount">
+                  مبلغ التبرع:
+                  <span>250
+                    <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال">
+                  </span>
+                </p>
+              </div>
+
+              <div class="cart-item-actions">
+                <button class="quantity-btn" type="button">-</button>
+                <span class="quantity-value">2</span>
+                <button class="quantity-btn" type="button">+</button>
+                <button class="remove-btn" type="button">حذف</button>
+              </div>
+            </div>
+
+            <div class="cart-item-card">
+              <div class="cart-item-image">
+                <img src="../images/food.png" alt="توفير الطعام">
+              </div>
+
+              <div class="cart-item-details">
+                <span class="cart-item-category">توفير الطعام</span>
+                <h3 class="cart-item-name">سلة رمضان الغذائية</h3>
+                <p class="cart-item-amount">
+                  مبلغ التبرع:
+                  <span>300
+                    <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال">
+                  </span>
+                </p>
+              </div>
+
+              <div class="cart-item-actions">
+                <button class="quantity-btn" type="button">-</button>
+                <span class="quantity-value">1</span>
+                <button class="quantity-btn" type="button">+</button>
+                <button class="remove-btn" type="button">حذف</button>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="cart-summary-card">
+            <h2 class="cart-summary-title">ملخص التبرع</h2>
+
+            <div class="summary-row">
+              <span>عدد الحملات</span>
+              <span>3</span>
+            </div>
+
+            <div class="summary-row">
+              <span>إجمالي التبرعات</span>
+              <span>
+                1,300
+                <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال">
+              </span>
+            </div>
+
+            <div class="summary-row total-row">
+              <span>المجموع النهائي</span>
+              <span>
+                1,300
+                <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال">
+              </span>
+            </div>
+
+            <button class="checkout-btn" type="button">إتمام التبرع</button>
+          </aside>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <p class="copyright">جميع الحقوق محفوظة - صدقة 2026 &copy</p>
+
+        <div class="footer-links">
+          <a href="contact-us.html" class="footer-contact-btn">تواصل معنا</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>

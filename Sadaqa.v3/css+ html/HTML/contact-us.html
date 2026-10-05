@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Sadaqa - تواصل معنا</title>
+  <link rel="stylesheet" href="styles-merged.css" /> <!-- styles1 -->
+</head>
+<body class="contact-page-body">
+
+  <div class="page-wrapper">
+
+     <header class="main-header">
+    <div class="header-right">
+      <a href="homepage.html">
+      <img src="../images/Sadaqa logo.png" alt="Sadaqa Logo" class="nav-logo">
+      </a>
+      <nav class="nav-links">
+        <a href="homepage.html" class="active">الصفحة الرئيسية</a>
+        <a href="my-campaigns.html">حملاتك</a>
+        <a href="contact-us.html">تواصل معنا</a>
+      </nav>
+    </div>
+
+    <div class="header-left">
+      
+      <div class="filter-wrapper">
+        <button class="filter-btn" id="filterToggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+          </svg>
+        </button>
+        
+        <div class="filter-menu" id="filterMenu">
+          <h4>تصفية حسب النوع:</h4>
+          <label><input type="checkbox" checked> توفير الطعام للمساكين</label>
+          <label><input type="checkbox" checked> ساعد مريضًا</label>
+          <label><input type="checkbox" checked> كفالة حجاج</label>
+          <label><input type="checkbox" checked> كفالة يتيم</label>
+          <label><input type="checkbox" checked> بناء آبار</label>
+          <label><input type="checkbox" checked> ترميم مساجد</label>
+          <label><input type="checkbox" checked> سقيا ماء</label>
+        </div>
+      </div>
+
+      <div class="search-container">
+        <input type="text" placeholder="ابحث عن حملة..." class="search-input">
+      </div>
+
+                <div class="cart-wrapper">
+        <a href="cart.html" class="cart-trigger">
+            <img src="../images/cart.png" alt="Cart" class="header-icon cart-icon">
+        </a>
+        </div>
+
+        <a href="profile.html" class="account-link">
+        <img src="../images/AccountIcon.png" alt="Account" class="header-icon account-trigger">
+        </a>
+
+    </div>
+  </header>
+
+    <main class="contact-main-section">
+      <section class="contact-page-container">
+
+        <div class="contact-info-box">
+          <h1 class="main-title">تواصل معنا</h1>
+          <p class="sub-title">
+            يسعدنا تواصلك معنا. املأ النموذج وسنقوم بالرد عليك في أقرب وقت.
+          </p>
+
+          <p class="required-note">* الحقول التي تحتوي على نجمة مطلوبة</p>
+
+          <form class="contact-form" action="#" method="post">
+            <div class="input-group">
+              <label for="fullName" class="input-label">الاسم *</label>
+              <input type="text" id="fullName" name="fullName" class="form-input" placeholder="اكتب اسمك الكامل" required />
+            </div>
+
+            <div class="input-group">
+              <label for="email" class="input-label">البريد الإلكتروني *</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="example@email.com" required />
+            </div>
+
+            <div class="input-group">
+              <label for="phone" class="input-label">رقم الجوال *</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="05xxxxxxxx" required />
+            </div>
+
+            <div class="input-group">
+              <label for="message" class="input-label">الرسالة *</label>
+              <textarea id="message" name="message" class="form-input contact-textarea" placeholder="اكتب رسالتك هنا..." required></textarea>
+            </div>
+
+            <button type="submit" class="contact-button">إرسال</button>
+          </form>
+        </div>
+
+        <div class="contact-map-box">
+          <h2 class="map-title">العنوان</h2>
+          <div class="map-frame-wrapper">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1569.5481411594128!2d49.60015357252404!3d25.341990093029043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e3791415f0e804d%3A0xdf48326e29f00666!2z2KzYp9mF2LnYqSDYp9mE2YXZhNmDINmB2YrYtdmE!5e0!3m2!1sar!2ssa!4v1791222131131!5m2!1sar!2ssa" width="600" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+  </div>
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <p class="copyright">جميع الحقوق محفوظة - صدقة 2026 &copy</p>
+
+        <div class="footer-links">
+          <a href="contact-us.html" class="footer-contact-btn">تواصل معنا</a>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

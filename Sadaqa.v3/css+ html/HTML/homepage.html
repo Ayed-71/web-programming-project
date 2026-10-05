@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Sadaqa - الرئيسية</title>
+  <link rel="stylesheet" href="styles-merged.css"> <!-- styles -->
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="header-right">
+      <a href="homepage.html">
+      <img src="../images/Sadaqa logo.png" alt="Sadaqa Logo" class="nav-logo">
+      </a>
+      <nav class="nav-links">
+        <a href="homepage.html" class="active">الصفحة الرئيسية</a>
+        <a href="my-campaigns.html">حملاتك</a>
+        <a href="contact-us.html">تواصل معنا</a>
+      </nav>
+    </div>
+
+    <div class="header-left">
+      
+      <div class="filter-wrapper">
+        <button class="filter-btn" id="filterToggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+          </svg>
+        </button>
+        
+        <div class="filter-menu" id="filterMenu">
+          <h4>تصفية حسب النوع:</h4>
+          <label><input type="checkbox" checked> توفير الطعام للمساكين</label>
+          <label><input type="checkbox" checked> ساعد مريضًا</label>
+          <label><input type="checkbox" checked> كفالة حجاج</label>
+          <label><input type="checkbox" checked> كفالة يتيم</label>
+          <label><input type="checkbox" checked> بناء آبار</label>
+          <label><input type="checkbox" checked> ترميم مساجد</label>
+          <label><input type="checkbox" checked> سقيا ماء</label>
+        </div>
+      </div>
+
+      <div class="search-container">
+        <input type="text" placeholder="ابحث عن حملة..." class="search-input">
+      </div>
+
+                <div class="cart-wrapper">
+        <a href="cart.html" class="cart-trigger">
+            <img src="../images/cart.png" alt="Cart" class="header-icon cart-icon">
+        </a>
+        </div>
+
+        <a href="profile.html" class="account-link">
+        <img src="../images/AccountIcon.png" alt="Account" class="header-icon account-trigger">
+        </a>
+
+    </div>
+  </header>
+
+  <main class="main-content">
+  <h2 class="section-title">التبرعات</h2>
+
+  <div class="campaigns-grid">
+    
+    <div class="campaign-card">
+      <a href="campaign-details.html" class="card-link"></a>
+      <div class="card-image-box">
+        <img src="../images/mosque.png" alt="تصنيف الحملة">
+      </div>
+      <a href="campaign-details.html" class="card-link">
+      <div class="card-info">
+        <span class="campaign-category">ترميم مساجد</span>
+        <h3 class="campaign-name">حملة بناء مسجد الغفران</h3>
+        <p class="campaign-amount">المبلغ المطلوب: <span>50,000 <img src="../images/Saudi_Riyal_Symbol.png" alt="ر.س" class="currency-symbol"></span></p>
+      </div>
+      </a>
+    </div>
+
+    <div class="campaign-card">
+      <div class="card-image-box">
+        <img src="../images/water.png" alt="تصنيف الحملة">
+      </div>
+      <div class="card-info">
+        <span class="campaign-category">سقيا ماء</span>
+        <h3 class="campaign-name">توفير برادات ماء للمدارس</h3>
+        <p class="campaign-amount">المبلغ المطلوب: <span>15,000 <img src="../images/Saudi_Riyal_Symbol.png" alt="ر.س" class="currency-symbol"></span></p>
+      </div>
+    </div>
+
+    <div class="campaign-card">
+      <div class="card-image-box">
+        <img src="../images/food.png" alt="تصنيف الحملة">
+      </div>
+      <div class="card-info">
+        <span class="campaign-category">توفير الطعام</span>
+        <h3 class="campaign-name">سلة رمضان الغذائية</h3>
+        <p class="campaign-amount">المبلغ المطلوب: <span>30,000 <img src="../images/Saudi_Riyal_Symbol.png" alt="ر.س" class="currency-symbol"></span></p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+  
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <p class="copyright">جميع الحقوق محفوظة - صدقة 2026 &copy</p>
+
+      <div class="footer-links">
+        <a href="contact-us.html" class="footer-contact-btn">تواصل معنا</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

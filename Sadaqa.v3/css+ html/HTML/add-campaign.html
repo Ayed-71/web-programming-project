@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>إضافة حملة - Sadaqa</title>
+  <link rel="stylesheet" href="styles-merged.css" /> <!-- styles1 -->
+</head>
+<body class="admin-page-body">
+
+  <div class="page-wrapper">
+
+    <header class="admin-header">
+      <div class="small-logo-box">
+        <img src="../images/Sadaqa logo.png" alt="شعار Sadaqa" class="small-logo-image" />
+      </div>
+
+      <div class="admin-header-text">
+        <h1 class="admin-page-title">إضافة حملة</h1>
+        <p class="admin-page-subtitle">أنشئ حملة جديدة</p>
+      </div>
+
+      <div class="admin-header-actions">
+        <a href="login.html" class="logout-button">تسجيل خروج</a>
+      </div>
+    </header>
+
+    <main class="admin-main-section">
+      <section class="admin-section">
+        <div class="section-header">
+            <h2 class="section-title">بيانات الحملة</h2>
+
+            <a href="admin.html" class="back-button inside">
+                العودة للوحة الإدارة
+            </a>
+        </div>
+
+        <form class="campaign-form">
+
+        <div class="input-group">
+            <label for="campaignTitle" class="input-label">اسم الحملة *</label>
+            <input type="text" id="campaignTitle" name="campaignTitle" class="form-input" placeholder="أدخل اسم الحملة" required/>
+        </div>
+
+        <div class="input-group">
+            <label for="campaignCategory" class="input-label">تصنيف الحملة *</label>
+            
+            <select id="campaignCategory" name="campaignCategory" class="form-input" required>
+            <option value="">اختر تصنيف الحملة</option>
+            <option>سقيا ماء</option>
+            <option>ترميم مساجد</option>
+            <option>حفر أبار</option>
+            <option>كفالة أيتام</option>
+            <option>كفالة حجاج</option>
+            <option>ساعد مريضا</option>
+            <option>توفير الطعام للمساكين</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="campaignGoal" class="input-label">المبلغ المستهدف *</label>
+            <input type="number" id="campaignGoal" name="campaignGoal" class="form-input" placeholder="أدخل المبلغ المستهدف" required/>
+        </div>
+
+        <button type="submit" class="save-campaign-button">إضافة الحملة</button>
+
+        </form>
+      </section>
+    </main>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>لوحة الإدارة - Sadaqa</title>
+  <link rel="stylesheet" href="styles-merged.css" /> <!-- styles1 -->
+</head>
+<body class="admin-page-body">
+
+  <div class="page-wrapper">
+
+    <header class="admin-header">
+      <div class="small-logo-box">
+        <img src="../images/Sadaqa logo.png" alt="شعار Sadaqa" class="small-logo-image" />
+      </div>
+
+      <div class="admin-header-text">
+        <h1 class="admin-page-title">لوحة الإدارة</h1>
+        <p class="admin-page-subtitle">إدارة الحملات والطلبات ورسائل التواصل</p>
+      </div>
+
+      <div class="admin-header-actions">
+        <a href="login.html" class="logout-button">تسجيل خروج</a>
+      </div>
+    </header>
+
+    <main class="admin-main-section">
+
+      <section class="admin-section">
+        <div class="section-header">
+            <h2 class="section-title">الطلبات</h2>
+
+            <a href="add-campaign.html" class="add-campaign-button inside">
+            إضافة حملة
+            </a>
+        </div>
+
+        <!-- Search -->
+        <div class="search-box">
+            <input
+            type="text"
+            class="search-input"
+            placeholder="ابحث عن حملة باسمها..."
+            />
+        </div>
+        
+      <div class="orders-grid">
+
+        <div class="status-card active-status" id="activeRequests">
+          <h3 class="status-title">الحملات النشطة</h3>
+
+          <div class="admin-campaign-item">
+            <div class="admin-campaign-image">
+              <img src="../images/mosque.png" alt="ترميم مساجد">
+            </div>
+            <div class="admin-campaign-details">
+              <span class="admin-campaign-category">ترميم مساجد</span>
+              <h4 class="admin-campaign-name">حملة بناء مسجد الغفران</h4>
+              <p class="admin-campaign-amount">
+                المبلغ المطلوب:
+                <span>50,000 <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال"></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="admin-campaign-item">
+            <div class="admin-campaign-image">
+              <img src="../images/water.png" alt="سقيا ماء">
+            </div>
+            <div class="admin-campaign-details">
+              <span class="admin-campaign-category">سقيا ماء</span>
+              <h4 class="admin-campaign-name">توفير برادات ماء للمدارس</h4>
+              <p class="admin-campaign-amount">
+                المبلغ المطلوب:
+                <span>15,000 <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال"></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="admin-campaign-item">
+            <div class="admin-campaign-image">
+              <img src="../images/food.png" alt="توفير الطعام">
+            </div>
+            <div class="admin-campaign-details">
+              <span class="admin-campaign-category">توفير الطعام</span>
+              <h4 class="admin-campaign-name">سلة رمضان الغذائية</h4>
+              <p class="admin-campaign-amount">
+                المبلغ المطلوب:
+                <span>30,000 <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="status-card pending-status" id="pendingRequests">
+          <h3 class="status-title">بانتظار الموافقة</h3>
+
+          <div class="admin-campaign-item">
+            <div class="admin-campaign-image">
+              <img src="../images/orphan.png" alt="كفالة أيتام">
+            </div>
+            <div class="admin-campaign-details">
+              <span class="admin-campaign-category">كفالة أيتام</span>
+              <h4 class="admin-campaign-name">كفالة 25 يتيماً</h4>
+              <p class="admin-campaign-amount">
+                المبلغ المطلوب:
+                <span>18,000 <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال"></span>
+              </p>
+
+              <div class="admin-request-actions">
+                <button class="approve-btn" type="button">قبول</button>
+                <button class="reject-btn" type="button">رفض</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-campaign-item">
+            <div class="admin-campaign-image">
+              <img src="../images/medical.png" alt="ساعد مريضاً">
+            </div>
+            <div class="admin-campaign-details">
+              <span class="admin-campaign-category">ساعد مريضاً</span>
+              <h4 class="admin-campaign-name">دعم علاج مرضى الكلى</h4>
+              <p class="admin-campaign-amount">
+                المبلغ المطلوب:
+                <span>22,000 <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال"></span>
+              </p>
+
+              <div class="admin-request-actions">
+                <button class="approve-btn" type="button">قبول</button>
+                <button class="reject-btn" type="button">رفض</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-campaign-item">
+            <div class="admin-campaign-image">
+              <img src="../images/hajj.png" alt="كفالة حجاج">
+            </div>
+            <div class="admin-campaign-details">
+              <span class="admin-campaign-category">كفالة حجاج</span>
+              <h4 class="admin-campaign-name">إعانة 10 حجاج</h4>
+              <p class="admin-campaign-amount">
+                المبلغ المطلوب:
+                <span>40,000 <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال"></span>
+              </p>
+
+              <div class="admin-request-actions">
+                <button class="approve-btn" type="button">قبول</button>
+                <button class="reject-btn" type="button">رفض</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="status-card inactive-status" id="inactiveRequests">
+          <h3 class="status-title">الحملات غير النشطة</h3>
+
+          <div class="admin-campaign-item">
+            <div class="admin-campaign-image">
+              <img src="../images/well.png" alt="حفر آبار">
+            </div>
+            <div class="admin-campaign-details">
+              <span class="admin-campaign-category">حفر آبار</span>
+              <h4 class="admin-campaign-name">حفر بئر في قرية نائية</h4>
+              <p class="admin-campaign-amount">
+                المبلغ المطلوب:
+                <span>35,000 <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال"></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="admin-campaign-item">
+            <div class="admin-campaign-image">
+              <img src="../images/mosque.png" alt="ترميم مساجد">
+            </div>
+            <div class="admin-campaign-details">
+              <span class="admin-campaign-category">ترميم مساجد</span>
+              <h4 class="admin-campaign-name">صيانة مسجد الحي القديم</h4>
+              <p class="admin-campaign-amount">
+                المبلغ المطلوب:
+                <span>12,000 <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </section>
+
+      <section class="admin-section">
+        <h2 class="section-title">رسائل تواصل معنا</h2>
+
+        <div class="messages-wrapper" id="messagesContainer">
+          <div class="admin-message-item">
+            <div class="message-header">
+                <h4 class="sender-name">User</h4>
+                <a href="mailto:khaled.m@example.com" class="sender-email">user@example.com</a>
+            </div>
+            <div class="message-body">
+                <p class="message-content">
+                   السلام عليكم، أود الاستفسار عن كيفية المشاركة كمتطوع في حملات سقيا الماء وتوزيع السلال الغذائية.
+                </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="admin-section">
+        <h2 class="section-title">إحصائيات التبرعات</h2>
+
+        <div class="stats-grid">
+
+            <div class="stats-card total-amount-card">
+            <h3 class="stats-card-title">إجمالي المبالغ</h3>
+            <p class="total-amount-value"> 100,000
+            <img src="../images/Saudi Riyal Symbol.png" class="riyal-icon">
+            </p>
+            </div>
+
+            <div class="stats-card chart-card">
+            <h3 class="stats-card-title">المبالغ حسب الأيام</h3>
+
+            <div class="chart-box">
+                <div class="chart-y-axis">
+                <span>0</span>
+                <span>2500</span>
+                <span>5000</span>
+                <span>7500</span>
+                <span>10000</span>
+                </div>
+
+                <div class="chart-content">
+                <div class="chart-grid-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="chart-bars">
+
+                  <div class="bar" style="height: 40%;">
+                    <span>4000</span>
+                  </div>
+
+                  <div class="bar" style="height: 70%;">
+                    <span>7000</span>
+                  </div>
+
+                  <div class="bar" style="height: 50%;">
+                    <span>5000</span>
+                  </div>
+
+                  <div class="bar" style="height: 90%;">
+                    <span>9000</span>
+                  </div>
+
+                  <div class="bar" style="height: 60%;">
+                    <span>6000</span>
+                  </div>
+
+                  <div class="bar" style="height: 80%;">
+                    <span>8000</span>
+                  </div>
+
+                  <div class="bar" style="height: 30%;">
+                    <span>3000</span>
+                  </div>
+
+                </div>
+
+                <div class="chart-x-axis">
+                    <span>السبت</span>
+                    <span>الأحد</span>
+                    <span>الإثنين</span>
+                    <span>الثلاثاء</span>
+                    <span>الأربعاء</span>
+                    <span>الخميس</span>
+                    <span>الجمعة</span>
+                </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <footer class="main-footer">
+  <div class="footer-container">
+    <p class="copyright">جميع الحقوق محفوظة - صدقة 2026 &copy</p>
+  </div>
+</footer>
+</body>
+</html>
