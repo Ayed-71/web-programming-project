@@ -4,21 +4,44 @@ var inputs = contact_form.querySelectorAll("input, textarea"); // Select all inp
 var message = document.createElement("p"); // Create a new paragraph element to display messages
 // style the message element
 message.style.color = "white";
-message.style.marginTop = "15px";
+message.style.marginTop = "7px";
+message.style.padding = "7px 10px";
 message.style.fontWeight = "bold";
+message.style.textAlign = "center";
+
+// Function to show an error message
+function show_error(input , message_text) {
+    message.style.backgroundColor = "red";
+    message.textContent = message_text;
+    input.parentNode.appendChild(message);
+}
 
 // An event listener to the contact form for the submit event
 contact_form.addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
+
     // Check if any input or textarea is empty
-    for (i = 0; i < inputs.length; i++) {
-        // If any input or textarea is empty, display an error message and return
-        if (inputs[i].value === "") {
-            message.style.backgroundColor = "red";
-            message.textContent = "الرجاء ملء جميع الحقول قبل الإرسال.";
-            contact_form.appendChild(message);
+    for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].value.trim() === "") {
+            show_error(inputs[i], "هذا الحقل مطلوب."); // Shows directly under whichever box is empty
             return;
         }
+    }
+
+    // Validate the email input field
+    var emailInput = contact_form.querySelector("input[type='email']"); // Select the email input field
+    var emailValue = emailInput.value.trim(); // Get the trimmed value of the email input
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) { // Validate the email format using a regular expression
+        show_error(emailInput, "الرجاء إدخال بريد إلكتروني صالح.");
+        return;
+    }
+
+    // Validate the phone input field
+    var phoneInput = contact_form.querySelector("input[type='tel']"); // Select the phone input field
+    var phoneValue = phoneInput.value.trim(); // Get the trimmed value of the phone input
+    if (!/^\d{10}$/.test(phoneValue)) { // Validate the phone number format (10 digits)
+        show_error(phoneInput, "الرجاء إدخال رقم هاتف صالح (10 أرقام).");
+        return;
     }
 
     // If all inputs and textareas are filled, display a success message
