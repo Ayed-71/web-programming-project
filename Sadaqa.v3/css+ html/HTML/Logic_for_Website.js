@@ -79,9 +79,7 @@ if (window.location.pathname.endsWith("admin.html")) {
         button.addEventListener("click", function () {
             var request_item = button.closest(".admin-campaign-item"); // Get the closest parent element with the class "admin-campaign-item"
             var action = request_item.querySelector(".admin-request-actions"); // Select the actions section (approve/reject) within the request item
-            if (action) {
-                action.remove(); // Remove the actions section (approve/reject) from the request item
-            }
+            update_card_button(request_item, "inactive"); // Update the button to show "Activate" instead of "approve/reject"
             active_requests.appendChild(request_item); // Move the request item to the active requests section
             number_of_requests(); // Update the request counts
         });
@@ -92,9 +90,7 @@ if (window.location.pathname.endsWith("admin.html")) {
         button.addEventListener("click", function () {
             var request_item = button.closest(".admin-campaign-item"); // Get the closest parent element with the class "admin-campaign-item"
             var action = request_item.querySelector(".admin-request-actions"); // Select the actions section (approve/reject) within the request item
-            if (action) {
-                action.remove(); // Remove the actions section (approve/reject) from the request item
-            }
+            update_card_button(request_item, "inactive"); // Update the button to show "Activate" instead of "approve/reject"
             inactive_requests.appendChild(request_item); // Move the request item to the inactive requests section
             number_of_requests(); // Update the request counts
         });
@@ -109,12 +105,8 @@ if (window.location.pathname.endsWith("admin.html")) {
         button.addEventListener("click", function () {
             var request_item = button.closest(".admin-campaign-item"); // Get the closest parent element with the class "admin-campaign-item"
             var action = request_item.querySelector(".admin-request-actions"); // Select the actions section (activate/deactivate) within the request item
-            if (action) {
-                action.remove(); // Remove the actions section (activate/deactivate) from the request item
-            }
-            if (request_item.parentNode === inactive_requests) {
-                active_requests.appendChild(request_item); // Move the request item to the active requests section
-            }
+            inactive_requests.appendChild(request_item); // Move the request item to the inactive requests section
+            update_card_button(request_item, "active"); // Update the button to show "Deactivate" instead of "Activate"
             number_of_requests(); // Update the request counts
         });
     });
@@ -124,12 +116,8 @@ if (window.location.pathname.endsWith("admin.html")) {
         button.addEventListener("click", function () {
             var request_item = button.closest(".admin-campaign-item"); // Get the closest parent element with the class "admin-campaign-item"
             var action = request_item.querySelector(".admin-request-actions"); // Select the actions section (activate/deactivate) within the request item
-            if (action) {
-                action.remove(); // Remove the actions section (activate/deactivate) from the request item
-            }
-            if (request_item.parentNode === active_requests) {
-                inactive_requests.appendChild(request_item); // Move the request item to the inactive requests section
-            }
+            active_requests.appendChild(request_item); // Move the request item to the active requests section
+            update_card_button(request_item, "inactive"); // Update the button to show "Activate" instead of "Deactivate"
             number_of_requests(); // Update the request counts
         });
     });
