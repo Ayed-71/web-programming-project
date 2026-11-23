@@ -1245,7 +1245,9 @@ a img {
 .reject-btn,
 .quantity-btn,
 .remove-btn,
-.status-btn {
+.status-btn,
+.deactivate-btn,
+.activate-btn {
   border: none;
   border-radius: 10px;
   font-family: inherit;
@@ -1254,34 +1256,40 @@ a img {
 }
 
 .approve-btn,
-.quantity-btn {
+.quantity-btn,
+.activate-btn {
   background-color: var(--secondary);
   color: var(--white);
 }
 
-.approve-btn {
+.approve-btn,
+.activate-btn {
   padding: 10px 16px;
   font-size: 14px;
 }
 
 .approve-btn:hover,
-.quantity-btn:hover {
+.quantity-btn:hover,
+.activate-btn:hover {
   background-color: #7f8b56;
 }
 
 .reject-btn,
-.remove-btn {
+.remove-btn,
+.deactivate-btn {
   background-color: #c0392b;
   color: var(--white);
 }
 
-.reject-btn {
+.reject-btn,
+.deactivate-btn {
   padding: 10px 16px;
   font-size: 14px;
 }
 
 .reject-btn:hover,
-.remove-btn:hover {
+.remove-btn:hover,
+.deactivate-btn:hover {
   background-color: #a93226;
 }
 
