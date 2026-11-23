@@ -70,6 +70,38 @@ if (window.location.pathname.endsWith("admin.html")) {
 
     number_of_requests(); // Call the function to count the requests
 
+    // Function to update the button in the request item based on the target state
+    update_card_button = function (request_item, target_state) {
+        var action = request_item.querySelector(".admin-request-actions");// Select the actions section (approve/reject or activate/deactivate) within the request item
+        action.innerHTML = ""; // Clear old button(s)
+
+        var new_btn = document.createElement("button");// Create a new button element
+        new_btn.type = "button";// Set the button type to "button"
+
+        // Determine the target state based on the current status
+        if (target_state === "active") {
+            new_btn.className = "deactivate-btn";// Set the button class to "deactivate-btn"
+            new_btn.textContent = "إلغاء نشاط الحملة"; // Set the button text to "Deactivate Campaign"
+            // Add an event listener to the button to move the request item to the inactive requests section when clicked
+            new_btn.addEventListener("click", function () {
+                inactive_requests.appendChild(request_item);// Move the request item to the inactive requests section
+                update_card_button(request_item, "inactive");// Update the button to show "Activate" instead of "Deactivate"
+                number_of_requests();// Update the request counts
+            });
+        } else if (target_state === "inactive") {
+            new_btn.className = "activate-btn";// Set the button class to "activate-btn"
+            new_btn.textContent = "تنشيط الحملة";// Set the button text to "Activate Campaign"
+            // Add an event listener to the button to move the request item to the active requests section when clicked
+            new_btn.addEventListener("click", function () {
+                active_requests.appendChild(request_item);// Move the request item to the active requests section
+                update_card_button(request_item, "active");// Update the button to show "Deactivate" instead of "Activate"
+                number_of_requests();// Update the request counts
+            });
+        }
+        // Append the new button to the actions section of the request item
+        action.appendChild(new_btn);
+    }
+
     // Select all approve and reject buttons
     var approve_buttons = document.querySelectorAll(".approve-btn");
     var reject_buttons = document.querySelectorAll(".reject-btn");
@@ -79,7 +111,7 @@ if (window.location.pathname.endsWith("admin.html")) {
         button.addEventListener("click", function () {
             var request_item = button.closest(".admin-campaign-item"); // Get the closest parent element with the class "admin-campaign-item"
             var action = request_item.querySelector(".admin-request-actions"); // Select the actions section (approve/reject) within the request item
-            update_card_button(request_item, "inactive"); // Update the button to show "Activate" instead of "approve/reject"
+            update_card_button(request_item, "active"); // Update the button to show "Activate" instead of "approve/reject"
             active_requests.appendChild(request_item); // Move the request item to the active requests section
             number_of_requests(); // Update the request counts
         });
@@ -90,7 +122,7 @@ if (window.location.pathname.endsWith("admin.html")) {
         button.addEventListener("click", function () {
             var request_item = button.closest(".admin-campaign-item"); // Get the closest parent element with the class "admin-campaign-item"
             var action = request_item.querySelector(".admin-request-actions"); // Select the actions section (approve/reject) within the request item
-            update_card_button(request_item, "inactive"); // Update the button to show "Activate" instead of "approve/reject"
+            update_card_button(request_item, "inactive"); // Update the button to show "Deactivate" instead of "approve/reject"
             inactive_requests.appendChild(request_item); // Move the request item to the inactive requests section
             number_of_requests(); // Update the request counts
         });
@@ -105,7 +137,7 @@ if (window.location.pathname.endsWith("admin.html")) {
         button.addEventListener("click", function () {
             var request_item = button.closest(".admin-campaign-item"); // Get the closest parent element with the class "admin-campaign-item"
             var action = request_item.querySelector(".admin-request-actions"); // Select the actions section (activate/deactivate) within the request item
-            inactive_requests.appendChild(request_item); // Move the request item to the inactive requests section
+            active_requests.appendChild(request_item); // Move the request item to the inactive requests section
             update_card_button(request_item, "active"); // Update the button to show "Deactivate" instead of "Activate"
             number_of_requests(); // Update the request counts
         });
@@ -116,7 +148,7 @@ if (window.location.pathname.endsWith("admin.html")) {
         button.addEventListener("click", function () {
             var request_item = button.closest(".admin-campaign-item"); // Get the closest parent element with the class "admin-campaign-item"
             var action = request_item.querySelector(".admin-request-actions"); // Select the actions section (activate/deactivate) within the request item
-            active_requests.appendChild(request_item); // Move the request item to the active requests section
+            inactive_requests.appendChild(request_item); // Move the request item to the active requests section
             update_card_button(request_item, "inactive"); // Update the button to show "Activate" instead of "Deactivate"
             number_of_requests(); // Update the request counts
         });
