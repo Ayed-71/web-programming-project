@@ -175,23 +175,6 @@ if (window.location.pathname.endsWith("add-campaign.html")) {
         input.parentNode.appendChild(message);
     }
 
-    // Function to validate the cost input field
-    function validate_cost_input() {
-        var cost_value = cost_input.value.trim(); // Get the trimmed value of the cost input
-        if (!/^\d+(\.\d{1,2})?$/.test(cost_value) || cost_value === "" || parseFloat(cost_value) <= 0) { // Validate the cost format (number with up to 2 decimal places) and check if it's empty or less than or equal to 0
-            show_error(cost_input, "الرجاء إدخال قيمة صحيحة (رقم مع ما يصل إلى منزلتين عشريتين).");
-            return false;
-        }
-        return true;
-    }
-
-    // An event listener to the cost input field for the input event
-    cost_input.addEventListener("blur", function () {
-        if (cost_input.value.trim() !== "") {
-            validate_cost_input(); // Validate the cost input field on every input event
-            }
-        });
-
     // An event listener to the contact form for the submit event
     add_campaign_form.addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent the default form submission behavior
@@ -204,14 +187,9 @@ if (window.location.pathname.endsWith("add-campaign.html")) {
             }
         }
 
-        // Validate the cost input field
-        if (!validate_cost_input()) {
-            return;
-        }
-
         // If all inputs and textareas are filled, display a success message
         message.style.color = "green";
-        message.textContent = "تم إرسال بنجاح.";
+        message.textContent = "تم إضافة الحملة بنجاح.";
         add_campaign_form.appendChild(message);
         add_campaign_form.reset();
     });
