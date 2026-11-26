@@ -1,5 +1,5 @@
 // 6: Contact us
-if (window.location.pathname.endsWith("contact-us.html")) {
+if (window.location.pathname.endsWith("/contact-us.html")) {
     var contact_form = document.querySelector(".contact-form"); // Select the contact form element
     var inputs = contact_form.querySelectorAll("input, textarea"); // Select all input and textarea elements within the contact form
 
@@ -55,7 +55,7 @@ if (window.location.pathname.endsWith("contact-us.html")) {
 
 
 // 7: Admin
-if (window.location.pathname.endsWith("admin.html")) {
+if (window.location.pathname.endsWith("/admin.html")) {
     // Select the elements for active, request list, and inactive requests
     var active_requests = document.getElementById("activeRequests");
     var pending_requests = document.getElementById("pendingRequests");
@@ -156,7 +156,7 @@ if (window.location.pathname.endsWith("admin.html")) {
 }
 
 //8: Admin Add-campaign
-if (window.location.pathname.endsWith("add-campaign.html")) {
+if (window.location.pathname.endsWith("/add-campaign.html")) {
     var add_campaign_form = document.querySelector(".campaign-form"); // Select the add campaign form element
     var inputs = add_campaign_form.querySelectorAll("input, select, textarea"); // Select all input, select, and textarea elements within the add campaign form
 
@@ -202,7 +202,7 @@ if (window.location.pathname.endsWith("add-campaign.html")) {
 }
 
 // 9: My-campaigns
-if (window.location.pathname.endsWith("my-campaigns.html")) {
+if (window.location.pathname.endsWith("/my-campaigns.html")) {
     // Select the three buttons by ID
     var active_btn = document.getElementById("activeBtn");
     var pending_btn = document.getElementById("pendingBtn");
@@ -247,7 +247,7 @@ if (window.location.pathname.endsWith("my-campaigns.html")) {
 }
 
 // 10: User Add-campaign
-if (window.location.pathname.endsWith("user-add-campaign.html")) {
+if (window.location.pathname.endsWith("/user-add-campaign.html")) {
     var user_add_campaign_form = document.querySelector(".campaign-form"); // Select the user add campaign form element
     var inputs = user_add_campaign_form.querySelectorAll("input,select,textarea"); // Select all required input, select, and textarea elements within the user add campaign form
 
