@@ -172,6 +172,7 @@ if (window.location.pathname.endsWith("add-campaign.html")) {
         message.style.color = "red";
         message.textContent = message_text;
         input.parentNode.appendChild(message);
+        input.focus();
     }
 
     // An event listener to the contact form for the submit event
@@ -182,6 +183,12 @@ if (window.location.pathname.endsWith("add-campaign.html")) {
         for (var i = 0; i < inputs.length; i++) {
             if (inputs[i].value.trim() === "") {
                 show_error(inputs[i], "هذا الحقل مطلوب."); // Shows directly under whichever box is empty
+                return;
+            }
+
+            // Check if the field is a number and less than or equal to zero
+            if (inputs[i].type === "number" && Number(inputs[i].value) <= 0) {
+                show_error(inputs[i], "يرجى إدخال مبلغ صحيح أكبر من صفر.");
                 return;
             }
         }
@@ -241,36 +248,46 @@ if (window.location.pathname.endsWith("my-campaigns.html")) {
 
 // 10: User Add-campaign
 if (window.location.pathname.endsWith("user-add-campaign.html")) {
-    var user_add_campaign_form = document.querySelector(".campaign-form"); // Select the add campaign form element
-    var inputs = user_add_campaign_form.querySelectorAll("input, select, textarea"); // Select all input, select, and textarea elements within the add campaign form
+    var user_add_campaign_form = document.querySelector(".campaign-form"); // Select the user add campaign form element
+    var inputs = user_add_campaign_form.querySelectorAll("input,select,textarea"); // Select all required input, select, and textarea elements within the user add campaign form
 
-    var message = document.createElement("p"); // Create a new paragraph element to display messages
-    // style the message element
+    // Create a new paragraph element to display messages
+    var message = document.createElement("p");
     message.style.marginTop = "7px";
     message.style.padding = "7px 10px";
     message.style.fontWeight = "bold";
     message.style.textAlign = "center";
 
     // Function to show an error message
-    function show_error(input , message_text) {
+    function show_error(input, message_text) {
         message.style.color = "red";
         message.textContent = message_text;
         input.parentNode.appendChild(message);
+        input.focus();
     }
 
-    // An event listener to the contact form for the submit event
+    // An event listener to the user add campaign form for the submit event
     user_add_campaign_form.addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent the default form submission behavior
 
-        // Check if any input or textarea is empty
+        // Check if any required input, select, or textarea is empty or invalid
         for (var i = 0; i < inputs.length; i++) {
-            if (inputs[i].value.trim() === "") {
-                show_error(inputs[i], "هذا الحقل مطلوب."); // Shows directly under whichever box is empty
+            var field = inputs[i];
+
+            // Check if the field is empty
+            if (field.value.trim() === "") {
+                show_error(field, "هذا الحقل مطلوب.");
+                return;
+            }
+
+           // Check if the field is a number and less than or equal to zero
+            if (field.type === "number" && Number(field.value) <= 0) {
+                show_error(field, "يرجى إدخال مبلغ صحيح أكبر من صفر.");
                 return;
             }
         }
 
-        // If all inputs and textareas are filled, display a success message
+        // If all required inputs, selects, and textareas are filled and valid, display a success message
         message.style.color = "green";
         message.textContent = "تم إضافة الحملة بنجاح.";
         user_add_campaign_form.appendChild(message);
