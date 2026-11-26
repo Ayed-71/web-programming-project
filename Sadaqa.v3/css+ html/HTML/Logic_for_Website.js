@@ -155,11 +155,10 @@ if (window.location.pathname.endsWith("admin.html")) {
     });
 }
 
-//8-Add-campaign
+//8: Admin Add-campaign
 if (window.location.pathname.endsWith("add-campaign.html")) {
     var add_campaign_form = document.querySelector(".campaign-form"); // Select the add campaign form element
     var inputs = add_campaign_form.querySelectorAll("input, select, textarea"); // Select all input, select, and textarea elements within the add campaign form
-    var cost_input = document.querySelector("#campaignGoal"); // Select the cost input field
 
      var message = document.createElement("p"); // Create a new paragraph element to display messages
     // style the message element
@@ -192,5 +191,89 @@ if (window.location.pathname.endsWith("add-campaign.html")) {
         message.textContent = "تم إضافة الحملة بنجاح.";
         add_campaign_form.appendChild(message);
         add_campaign_form.reset();
+    });
+}
+
+// 9: My-campaigns
+if (window.location.pathname.endsWith("my-campaigns.html")) {
+    // Select the three buttons by ID
+    var active_btn = document.getElementById("activeBtn");
+    var pending_btn = document.getElementById("pendingBtn");
+    var inactive_btn = document.getElementById("inactiveBtn");
+
+    // Select the three campaign content boxes by ID
+    var active_box = document.getElementById("activeBox");
+    var pending_box = document.getElementById("pendingBox");
+    var inactive_box = document.getElementById("inactiveBox");
+
+    // Function to hide all boxes and deactivate all buttons
+    function hide_all_campaigns() {
+        active_btn.classList.remove("active");
+        pending_btn.classList.remove("active");
+        inactive_btn.classList.remove("active");
+
+        active_box.classList.remove("active-content");
+        pending_box.classList.remove("active-content");
+        inactive_box.classList.remove("active-content");
+    }
+
+    // Event listener for Active campaigns button
+    active_btn.addEventListener("click", function () {
+        hide_all_campaigns(); // Hide all boxes first
+        active_btn.classList.add("active"); // Highlight active button
+        active_box.classList.add("active-content"); // Show active campaigns box
+    });
+
+    // Event listener for Pending campaigns button
+    pending_btn.addEventListener("click", function () {
+        hide_all_campaigns(); // Hide all boxes first
+        pending_btn.classList.add("active"); // Highlight pending button
+        pending_box.classList.add("active-content"); // Show pending campaigns box
+    });
+
+    // Event listener for Inactive campaigns button
+    inactive_btn.addEventListener("click", function () {
+        hide_all_campaigns(); // Hide all boxes first
+        inactive_btn.classList.add("active"); // Highlight inactive button
+        inactive_box.classList.add("active-content"); // Show inactive campaigns box
+    });
+}
+
+// 10: User Add-campaign
+if (window.location.pathname.endsWith("user-add-campaign.html")) {
+    var user_add_campaign_form = document.querySelector(".campaign-form"); // Select the add campaign form element
+    var inputs = user_add_campaign_form.querySelectorAll("input, select, textarea"); // Select all input, select, and textarea elements within the add campaign form
+
+    var message = document.createElement("p"); // Create a new paragraph element to display messages
+    // style the message element
+    message.style.marginTop = "7px";
+    message.style.padding = "7px 10px";
+    message.style.fontWeight = "bold";
+    message.style.textAlign = "center";
+
+    // Function to show an error message
+    function show_error(input , message_text) {
+        message.style.color = "red";
+        message.textContent = message_text;
+        input.parentNode.appendChild(message);
+    }
+
+    // An event listener to the contact form for the submit event
+    user_add_campaign_form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Check if any input or textarea is empty
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].value.trim() === "") {
+                show_error(inputs[i], "هذا الحقل مطلوب."); // Shows directly under whichever box is empty
+                return;
+            }
+        }
+
+        // If all inputs and textareas are filled, display a success message
+        message.style.color = "green";
+        message.textContent = "تم إضافة الحملة بنجاح.";
+        user_add_campaign_form.appendChild(message);
+        user_add_campaign_form.reset();
     });
 }
