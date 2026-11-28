@@ -253,6 +253,7 @@ if (window.location.pathname.endsWith("/user-add-campaign.html")) {
 
     // Create a new paragraph element to display messages
     var message = document.createElement("p");
+    // style the message element
     message.style.marginTop = "7px";
     message.style.padding = "7px 10px";
     message.style.fontWeight = "bold";
@@ -293,4 +294,67 @@ if (window.location.pathname.endsWith("/user-add-campaign.html")) {
         user_add_campaign_form.appendChild(message);
         user_add_campaign_form.reset();
     });
+}
+
+// Function to set the quick donation amount when a preset button is clicked
+function setAmount(amount) {
+    var amountInput = document.getElementById("donationAmount"); // Select the donation amount input field
+    if (amountInput) {
+        amountInput.value = amount; // Set the value of the donation amount input field to the selected amount
+
+        // Check if an existing error message is displayed and remove it
+        var existingError = document.getElementById("amountErrorMsg");
+        if (existingError) {
+            existingError.remove();
+        }
+    }
+}
+
+// 11: campaign-details
+if (window.location.pathname.endsWith("/campaign-details.html")) {
+
+    // Create a new paragraph element to display messages
+    var message = document.createElement("p");
+    message.id = "amountErrorMsg"; // Set an ID for the message element so it can be removed later
+    // style the message element
+    message.style.marginTop = "7px";
+    message.style.padding = "7px 10px";
+    message.style.fontWeight = "bold";
+    message.style.textAlign = "center";
+
+    // Function to show an error message
+    function show_error(input, message_text) {
+        message.style.color = "red";
+        message.textContent = message_text;
+        input.parentNode.appendChild(message);
+        input.focus();
+    }
+
+    // Function to validate the donation amount input before adding to cart or donating
+    function validateAmount() {
+        var amountInput = document.getElementById("donationAmount"); // Select the donation amount input field
+        var rawValue = amountInput.value.trim(); // Get the trimmed string value from the input field
+        var amountValue = parseFloat(rawValue); // Convert the input value to a floating-point number
+
+        // Check if the donation amount field is empty
+        if (rawValue === "") {
+            show_error(amountInput, "يرجى إدخال مبلغ التبرع.");
+            return null;
+        }
+
+        // Check if the donation amount is not a number or is less than or equal to zero
+        if (isNaN(amountValue) || amountValue <= 0) {
+            show_error(amountInput, "يرجى إدخال مبلغ صحيح أكبر من صفر.");
+            return null;
+        }
+
+        // Remove any existing error message if the amount is valid
+        var existingError = document.getElementById("amountErrorMsg");
+        if (existingError) {
+            existingError.remove();
+        }
+
+        amountInput.value = amountValue.toFixed(2); // Format the valid amount to two decimal places
+        return amountValue; // Return the validated donation amount
+    }
 }
