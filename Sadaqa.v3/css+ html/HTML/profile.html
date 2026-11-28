@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Sadaqa - الملف الشخصي</title>
     <link rel="stylesheet" href="styles-merged.css"> <!-- styles -->
+  <script src="Logic_for_Website.js" defer></script>
 </head>
 <body>
 
@@ -73,7 +74,9 @@
                 </div>
             </div>
 
-            <div class="profile-details-section">
+            <!-- تعديل الملف الشخصي -->
+            <form class="profile-details-section" id="profileForm" method="post" novalidate>
+                <p>تُحفظ هذه التعديلات لهذا العرض في متصفحك. استخدم بيانات تجريبية.</p>
                 
                 <div class="info-group">
                     <input type="checkbox" id="edit-email" class="toggle-edit">
@@ -82,7 +85,7 @@
                         <label for="edit-email" class="edit-text-btn">تغيير</label>
                     </div>
                     <div class="display-value">user@example.com</div>
-                    <input type="email" value="user@example.com" class="edit-input">
+                    <input id="profileEmail" aria-label="البريد الإلكتروني الجديد" type="email" value="user@example.com" class="edit-input">
                 </div>
 
                 <div class="info-group">
@@ -92,11 +95,12 @@
                         <label for="edit-pass" class="edit-text-btn">تغيير</label>
                     </div>
                     <div class="display-value">********</div>
-                    <input type="password" placeholder="كلمة مرور جديدة" class="edit-input">
+                    <input id="profilePassword" aria-label="كلمة المرور الجديدة" autocomplete="new-password" type="password" placeholder="كلمة مرور جديدة" class="edit-input">
                 </div>
 
                 <button type="submit" class="save-btn-css">حفظ التغييرات</button>
-            </div>
+                <p class="feature-status" role="status"></p>
+            </form>
 
             <hr class="divider">
 

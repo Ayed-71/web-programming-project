@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <title>إنشاء حساب - Sadaqa</title>
   <link rel="stylesheet" href="styles-merged.css" /> <!-- styles -->
+  <script src="Logic_for_Website.js" defer></script>
 </head>
 <body id="login-page-body">
 
@@ -43,29 +44,35 @@
               />
             </div>
 
+            <!-- إظهار كلمة المرور -->
             <div class="input-group" id="passwordGroup">
               <label for="passwordInput" class="input-label" id="passwordLabel">كلمة المرور</label>
-              <input
-                type="password"
-                name="password"
-                class="form-input"
-                id="passwordInput"
-                placeholder="أدخل كلمة المرور"
-                required
-                minlength="8"
-              />
+              <div class="password-control">
+                <input
+                  type="password"
+                  name="password"
+                  class="form-input"
+                  id="passwordInput"
+                  placeholder="أدخل كلمة المرور"
+                  required
+                  minlength="8"
+                />
+              </div>
             </div>
 
+            <!-- إظهار تأكيد كلمة المرور -->
             <div class="input-group" id="confirmPasswordGroup">
               <label for="confirmPasswordInput" class="input-label" id="confirmPasswordLabel">تأكيد كلمة المرور</label>
-              <input
-                type="password"
-                name="confirmPassword"
-                class="form-input"
-                id="confirmPasswordInput"
-                placeholder="أعد إدخال كلمة المرور"
-                required
-              />
+              <div class="password-control">
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  class="form-input"
+                  id="confirmPasswordInput"
+                  placeholder="أعد إدخال كلمة المرور"
+                  required
+                />
+              </div>
             </div>
 
             <button type="submit" class="login-button" id="loginButton">إنشاء الحساب</button>

@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <title>Sadaqa - الرئيسية</title>
   <link rel="stylesheet" href="styles-merged.css"> <!-- styles -->
+  <script src="Logic_for_Website.js" defer></script>
 </head>
 <body>
 
@@ -62,9 +63,12 @@
   <main class="main-content">
   <h2 class="section-title">التبرعات</h2>
 
+  <!-- رسالة نتائج الفلتر -->
+  <p class="feature-status" id="campaignStatus" role="status" hidden>ما فيه حملات تطابق اختيارك.</p>
+  <!-- بطاقات الحملات -->
   <div class="campaigns-grid">
     
-    <div class="campaign-card">
+    <div class="campaign-card" id="mosque" data-campaign="mosque">
       <a href="campaign-details.html" class="card-link"></a>
       <div class="card-image-box">
         <img src="../images/mosque.png" alt="تصنيف الحملة">
@@ -78,7 +82,7 @@
       </a>
     </div>
 
-    <div class="campaign-card">
+    <div class="campaign-card" id="school-water" data-campaign="school-water">
       <div class="card-image-box">
         <img src="../images/water.png" alt="تصنيف الحملة">
       </div>
@@ -89,7 +93,7 @@
       </div>
     </div>
 
-    <div class="campaign-card">
+    <div class="campaign-card" id="ramadan-food" data-campaign="ramadan-food">
       <div class="card-image-box">
         <img src="../images/food.png" alt="تصنيف الحملة">
       </div>

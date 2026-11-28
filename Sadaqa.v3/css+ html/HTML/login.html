@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <title>تسجيل الدخول - Sadaqa</title>
   <link rel="stylesheet" href="styles-merged.css" /> <!-- styles -->
+  <script src="Logic_for_Website.js" defer></script>
 </head>
 <body id="login-page-body">
 
@@ -48,14 +49,17 @@
 
             <div class="input-group" id="passwordGroup">
               <label for="passwordInput" class="input-label" id="passwordLabel">كلمة المرور</label>
-              <input
-                type="password"
-                name="password"
-                class="form-input"
-                id="passwordInput"
-                placeholder="أدخل كلمة المرور"
-                required
-              />
+              <!-- زر إظهار كلمة المرور -->
+              <div class="password-control">
+                <input
+                  type="password"
+                  name="password"
+                  class="form-input"
+                  id="passwordInput"
+                  placeholder="أدخل كلمة المرور"
+                  required
+                />
+              </div>
             </div>
 
             <div class="options-row" id="optionsRow">

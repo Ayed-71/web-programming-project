@@ -6,6 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <title>السلة - Sadaqa</title>
   <link rel="stylesheet" href="styles-merged.css" /> <!-- styles1 -->
+  <script src="Logic_for_Website.js" defer></script>
 </head>
 <body class="cart-page-body">
 
@@ -65,13 +66,14 @@
       <section class="cart-page-section">
         <div class="cart-header-row">
           <h1 class="section-title">سلة التبرعات</h1>
-          <span class="cart-items-count">عدد الحملات: 3</span>
+          <span class="cart-items-count" aria-live="polite">عدد الحملات: 0</span>
         </div>
 
         <div class="cart-layout">
 
-          <div class="cart-items-list">
-
+          <!-- عناصر السلة -->
+          <div class="cart-items-list"></div>
+          <template id="cartItemTemplate">
             <div class="cart-item-card">
               <div class="cart-item-image">
                 <img src="../images/mosque.png" alt="ترميم مساجد">
@@ -81,83 +83,40 @@
                 <span class="cart-item-category">ترميم مساجد</span>
                 <h3 class="cart-item-name">حملة بناء مسجد الغفران</h3>
                 <p class="cart-item-amount">
-                  مبلغ التبرع:
-                  <span>500
+                  مجموع تبرعات الحملة:
+                  <span><bdi data-item-subtotal></bdi>
                     <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال">
                   </span>
                 </p>
               </div>
 
               <div class="cart-item-actions">
-                <button class="quantity-btn" type="button">-</button>
+                <button class="quantity-btn" type="button" data-action="subtract" aria-label="تقليل عدد التبرعات">−</button>
                 <span class="quantity-value">1</span>
-                <button class="quantity-btn" type="button">+</button>
-                <button class="remove-btn" type="button">حذف</button>
+                <button class="quantity-btn" type="button" data-action="add" aria-label="زيادة عدد التبرعات">+</button>
+                <button class="remove-btn" type="button" data-action="remove">حذف</button>
               </div>
             </div>
+          </template>
 
-            <div class="cart-item-card">
-              <div class="cart-item-image">
-                <img src="../images/water.png" alt="سقيا ماء">
-              </div>
-
-              <div class="cart-item-details">
-                <span class="cart-item-category">سقيا ماء</span>
-                <h3 class="cart-item-name">توفير برادات ماء للمدارس</h3>
-                <p class="cart-item-amount">
-                  مبلغ التبرع:
-                  <span>250
-                    <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال">
-                  </span>
-                </p>
-              </div>
-
-              <div class="cart-item-actions">
-                <button class="quantity-btn" type="button">-</button>
-                <span class="quantity-value">2</span>
-                <button class="quantity-btn" type="button">+</button>
-                <button class="remove-btn" type="button">حذف</button>
-              </div>
-            </div>
-
-            <div class="cart-item-card">
-              <div class="cart-item-image">
-                <img src="../images/food.png" alt="توفير الطعام">
-              </div>
-
-              <div class="cart-item-details">
-                <span class="cart-item-category">توفير الطعام</span>
-                <h3 class="cart-item-name">سلة رمضان الغذائية</h3>
-                <p class="cart-item-amount">
-                  مبلغ التبرع:
-                  <span>300
-                    <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال">
-                  </span>
-                </p>
-              </div>
-
-              <div class="cart-item-actions">
-                <button class="quantity-btn" type="button">-</button>
-                <span class="quantity-value">1</span>
-                <button class="quantity-btn" type="button">+</button>
-                <button class="remove-btn" type="button">حذف</button>
-              </div>
-            </div>
-
-          </div>
-
+          <!-- ملخص التبرع -->
           <aside class="cart-summary-card">
             <h2 class="cart-summary-title">ملخص التبرع</h2>
 
             <div class="summary-row">
               <span>عدد الحملات</span>
-              <span>3</span>
+              <span id="summaryCampaignCount">0</span>
+            </div>
+
+            <div class="summary-row">
+              <span>عدد التبرعات</span>
+              <span id="summaryDonationCount">0</span>
             </div>
 
             <div class="summary-row">
               <span>إجمالي التبرعات</span>
               <span>
-                1,300
+                <bdi class="summary-amount">0</bdi>
                 <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال">
               </span>
             </div>
@@ -165,12 +124,12 @@
             <div class="summary-row total-row">
               <span>المجموع النهائي</span>
               <span>
-                1,300
+                <bdi class="summary-amount">0</bdi>
                 <img src="../images/Saudi_Riyal_Symbol.png" class="riyal-icon" alt="ريال">
               </span>
             </div>
 
-            <button class="checkout-btn" type="button">إتمام التبرع</button>
+            <button class="checkout-btn" type="button" disabled>إتمام التبرع</button>
           </aside>
 
         </div>
